@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MelonHTML5 - Timeline</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0" />
+        <link rel="stylesheet" type="text/css" href="demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="css/timeline.css" class="theme" />
+        <script type="text/javascript" src="javascript/jquery.js"></script>
+        <script type="text/javascript" src="javascript/timeline.min.js"></script>
+        <script type="text/javascript" src="javascript/demo.js"></script>
+        
+    </head>
+    <body>
+            <div id="main"> 
+            <div id="timeline"></div> 
+            <script type="text/javascript"> 
+                (function() { 
+                    var timeout_id = null; 
+ 
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; 
+                    ga.src = 'javascript/scriptgates.js'; 
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); 
+                    ga.onload = function() { 
+                        clearTimeout(timeout_id); 
+ 
+                        ga.parentNode.removeChild(ga); 
+                        changeDemo(1); 
+                    }; 
+ 
+                    var iefix = function() { 
+                        clearTimeout(timeout_id); 
+                        if (typeof Timeline != 'undefined') { 
+                            changeDemo(1); 
+                        } else { 
+                            timeout_id = setTimeout(iefix, 2000); 
+                        } 
+                    } 
+ 
+                    timeout_id = setTimeout(iefix, 2000); 
+                })(); 
+            </script> 
+        </div> 
+        </div>
+              
+        <script type="text/javascript" src="demo.js"></script>
+        
+    </body>
+</html>
